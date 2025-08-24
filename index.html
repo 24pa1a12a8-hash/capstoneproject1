@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>HMS Portal</title>
+  <title>Nclarify Portal</title>
   <style>
     * {
       margin: 0;
@@ -14,12 +14,6 @@
       height: 100%;
       font-family: 'Segoe UI', sans-serif;
     }
-
-    body {
-      background: url('https://wallpapers.com/images/hd/hospital-background-8uzvaaj1wielv1ca.jpg') no-repeat center center fixed;
-      background-size: cover;
-    }
-
     .overlay {
       background-color: rgba(0, 0, 0, 0.6);
       height: 100%;
@@ -137,7 +131,7 @@
 
     <!-- Login Form -->
     <div class="form-container active" id="loginContainer">
-      <h2>LOGIN TO HMS</h2>
+      <h2>Login To NClarify</h2>
       <form id="loginForm">
         <label for="loginUsername">Username</label>
         <input type="text" id="loginUsername" placeholder="Enter username" required>
@@ -155,7 +149,7 @@
       <div id="message"></div>
     </div>
 
-    <!-- Sign-Up Form -->
+    
     <div class="form-container" id="signupContainer">
       <h2>Create an Account</h2>
       <form id="signupForm">
@@ -174,8 +168,8 @@
         <label for="role">Role</label>
         <select id="role" required>
           <option value="">Select role</option>
-          <option value="doctor">Doctor</option>
-          <option value="patient">Patient</option>
+          <option value="doctor">Student</option>
+          <option value="patient">Teacher</option>
         </select>
 
         <button type="submit" class="btn">Sign Up</button>
@@ -233,15 +227,7 @@
         messageBox.style.color = "#00ff99";
         messageBox.textContent = "Login successful! Redirecting...";
         messageBox.style.display = "block";
-        setTimeout(() => {
-          if (storedUser.role === "doctor") {
-            window.location.href = "doctordashboard.html";
-          } else if (storedUser.role === "patient") {
-            window.location.href = "patientdashboard.html";
-          } else {
-            messageBox.textContent = "Unknown role. Please contact support.";
-          }
-        }, 1500);
+
       } else {
         messageBox.style.color = "#ff9999";
         messageBox.innerHTML = `
